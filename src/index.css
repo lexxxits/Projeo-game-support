@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    background-color: #f4f6f9;
+    color: #0f172a;
+    font-family: "DM Sans", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    background-color: #0a0e17;
+    color: #e2e8f0;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #f4f6f9;
+    color: #0f172a;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  html.dark body {
+    background-color: #0a0e17;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(45, 78, 122, 0.16), transparent),
+      linear-gradient(180deg, #0a0e17 0%, #070a11 100%);
+    color: #e2e8f0;
+  }
+}
+
+/* Custom sleek scrollbar */
+.noir-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.noir-scroll::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+html.dark .noir-scroll::-webkit-scrollbar-track {
+  background: #0d131f;
+}
+
+.noir-scroll::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+
+html.dark .noir-scroll::-webkit-scrollbar-thumb {
+  background: #23324a;
+}
+
+.noir-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Subtle PSX CRT scanline overlay for preview canvas */
+.psx-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.22) 3px,
+    rgba(0, 0, 0, 0.22) 4px
+  );
+  pointer-events: none;
+}

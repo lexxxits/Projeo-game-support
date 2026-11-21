@@ -1,0 +1,6 @@
+{
+  "name": "Dark Knight PSX",
+  "description": "Plataforma oficial de apresentação, WebView jogável e apoio comunitário para o projeto Dark Knight PSX.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
